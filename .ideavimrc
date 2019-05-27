@@ -1,0 +1,103 @@
+nmap zrs :source ~/.ideavimrc <CR>
+:set rnu
+
+nmap ,p "0p
+nmap ,P "0P
+imap z,p <Esc>"0pa
+imap z,P <Esc>"0Pa
+
+:nmap z, vi)
+:nmap z. vi}
+:nmap z) vi)
+:nmap z} vi}
+:nmap z> vit
+:nmap c> cit
+:nmap z" vi"
+:nmap z' vi'
+:nmap z] ci]
+":vmap <Esc> <Esc><Esc><Esc>
+:imap qq <Esc>
+:nmap <BS> a<BS>
+:nmap zh ^
+:nmap hh ^
+:imap hh <Esc>^i
+:nmap zl $
+:nmap ll $
+:imap zl <End>
+":nmap zt zt2k2j
+:nmap hc ^C
+imap zb <Esc>:action GotoDeclaration<CR>  
+nmap zb :action GotoDeclaration<CR>  
+vmap zb <Esc>:action GotoDeclaration<CR>
+":nmap zb ciw
+":vmap zb <Esc>ciw
+:imap zd <Esc>dd
+"nmap j gj
+"nmap k gk
+"nmap zq ZQ
+nmap zq :wq<CR>
+:nmap <BS> a<BS>
+"nmap <F1> mcv?@test<CR>v?/**<CR>by`cp
+
+imap zct <Esc>mb"2y?function test<CR>"1y{`b"1p"2p? function<CR>3ftlzz<Esc>
+nmap zct mb"2y?function test<CR>"1y{`b"1p"2p? function<CR>3ftlzz<Esc>
+"? function<CR>3ftlzz
+
+imap <A-.> ->
+imap <A-,> =>
+
+nmap zk :action Back<CR>
+imap zk <Esc>:action Back<CR>
+nmap zj :action Forward<CR>
+imap zj <Esc>:action Forward<CR>
+nmap zn :action GotoNextError<CR>
+nmap zf :action GotoDeclaration<CR>
+imap zf <Esc>:action GotoDeclaration<CR>
+nmap zgc zz:action CheckinProject<CR>
+
+map zra zz:action ReformatCode<CR>:action Rerun<CR>
+imap zra <Esc>zz:action ReformatCode<CR>:action Rerun<CR>
+
+nmap zt zz:action Run<CR>
+map <C-S> zz:action ReformatCode<CR>:action RearrangeCode<CR>:action Rerun<CR>
+imap <C-S> <Esc>zz:action ReformatCode<CR>:action RearrangeCode<CR>:action Rerun<CR>
+
+map zrr :action RenameElement<CR>
+
+map zri :action Inline<CR>
+imap zri <Esc>:action Inline<CR>
+map zrf :action IntroduceField<CR>
+imap zrf <Esc>:action IntroduceField<CR>
+map zrp :action IntroduceParameter<CR>
+imap zrp <Esc>:action IntroduceParameter<CR>
+
+"nmap zsp vi':<bs><bs><bs><bs><bs>action IntroduceParameter<CR>
+
+map zrv :action IntroduceVariable<CR>
+vmap zrv <Esc>:action IntroduceVariable<CR>
+imap zrv <Esc>:action IntroduceVariable<CR>
+nmap zrm :action ExtractMethod<CR>
+imap zrm <ESC>:action ExtractMethod<CR>
+"vmap zrm :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<CR>:action ExtractMethod<CR><ESC>
+"vmap M :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<CR>:action ExtractMethod<CR><ESC>
+vmap zrm :action ExtractMethod<CR>
+vmap M :action ExtractMethod<CR>
+map zrt :action SearchEverywhere<CR>
+imap zrt <Esc>:action SearchEverywhere<CR>
+map zro :action Move<CR>
+imap zro <Esc>:action Move<CR>
+map <C-D> :action EditorDuplicateLines<CR>
+imap <C-D> <Esc>:action EditorDuplicateLines<CR>
+map <C-A-K> :action MoveLineUp<CR>:action VimAutoIndentLines<CR>
+imap <C-A-K> <Esc>:action MoveLineUp<CR>:action VimAutoIndentLines<CR>
+map <C-A-J> :action MoveLineDown<CR>:action VimAutoIndentLines<CR>
+imap <C-A-J> <Esc>:action MoveLineDown<CR>:action VimAutoIndentLines<CR>
+map <A-D> :action EditorDeleteLine<CR>
+imap <A-D> <Esc>:action EditorDeleteLine<CR>
+:nmap ,m :action FileStructurePopup<CR>
+"vmap I :action SurroundWithLiveTemplate<CR>
+
+:nmap zcc ci'
+:nmap zaa ca'
+nmap <A-u> :redo<CR>
+:vmap S :action SurroundWith<CR>
