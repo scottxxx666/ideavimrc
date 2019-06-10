@@ -41,6 +41,10 @@ nmap zq :wq<CR>
 
 imap zct <Esc>mb"2y?function test<CR>"1y{`b"1p"2p? function<CR>3ftlzz<Esc>
 nmap zct mb"2y?function test<CR>"1y{`b"1p"2p? function<CR>3ftlzz<Esc>
+imap zcm <Esc>mb"2y?function <CR>"1y{`b"1p"2p? function<CR>wwzz<Esc>
+nmap zcm mb"2y?function <CR>"1y{`b"1p"2p? function<CR>wwzz<Esc>
+imap zc{ <Esc>mb?{<CR>hhy'b'bpzz<Esc>kdd
+nmap zc{ mb?{<CR>hhy'b'bpzz<Esc>
 "? function<CR>3ftlzz
 
 imap <A-.> ->
