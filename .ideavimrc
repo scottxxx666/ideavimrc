@@ -9,25 +9,30 @@ imap z,P <Esc>"0Pa
 :nmap z, vi)
 :nmap z. vi}
 :nmap z) vi)
+:nmap z( f(vi)
+:vmap z) <Esc>2f)vi)
 :nmap z} vi}
+:nmap z{ f{vi}
+:vmap z} <Esc>2f}vi{
 :nmap z> vit
 :nmap c> cit
 :nmap z" vi"
 :nmap z' vi'
-:nmap z] ci]
-":vmap <Esc> <Esc><Esc><Esc>
+:nmap z] vi]
+:nmap z[ f[vi]
+:vmap z] <Esc>2f]vi]
+:vmap qq <Esc><Esc>
 :imap qq <Esc>
 :nmap <BS> a<BS>
 :nmap zh ^
 :nmap hh ^
 :imap hh <Esc>^i
-:nmap zl $
 :nmap ll $
 :imap zl <End>
 ":nmap zt zt2k2j
 :nmap hc ^C
-imap zb <Esc>:action GotoDeclaration<CR>  
-nmap zb :action GotoDeclaration<CR>  
+imap zb <Esc>:action GotoDeclaration<CR>
+nmap zb :action GotoDeclaration<CR>
 vmap zb <Esc>:action GotoDeclaration<CR>
 ":nmap zb ciw
 ":vmap zb <Esc>ciw
@@ -39,32 +44,44 @@ nmap zq :wq<CR>
 :nmap <BS> a<BS>
 "nmap <F1> mcv?@test<CR>v?/**<CR>by`cp
 
-imap zct <Esc>mb"2y?function test<CR>"1y{`b"1p"2p? function<CR>3ftlzz<Esc>
-nmap zct mb"2y?function test<CR>"1y{`b"1p"2p? function<CR>3ftlzz<Esc>
+nmap zt mb"2y?test<CR>`b"2p?test<CR>O<Esc>jf'l
+imap zt <Esc>mb"2y?test<CR>`b"2p?test<CR>O<Esc>jf'l
+"imap zct <Esc>mb"2y?function test<CR>"1y{`b"1p"2p? function<CR>3ftlzz<Esc>
+"nmap zct mb"2y?function test<CR>"1y{`b"1p"2p? function<CR>3ftlzz<Esc>
 imap zcm <Esc>mb"2y?function <CR>"1y{`b"1p"2p? function<CR>wwzz<Esc>
 nmap zcm mb"2y?function <CR>"1y{`b"1p"2p? function<CR>wwzz<Esc>
-imap zc{ <Esc>mb?{<CR>hhy'b'bpzz<Esc>kdd
-nmap zc{ mb?{<CR>hhy'b'bpzz<Esc>
+imap z{ <Esc>mb?}<CR>%hhy'b'bpzz<Esc>kdd
+nmap z{ mb?}<CR>%hhy'b'bpzz<Esc>
 "? function<CR>3ftlzz
 
 imap <A-.> ->
 imap <A-,> =>
 
-nmap zk :action Back<CR>
-imap zk <Esc>:action Back<CR>
+nmap zS #
+imap zS <Esc>#
+nmap zs *
+imap zs <Esc>*
+nmap zJ :action Back<CR>
+imap zJ <Esc>:action Back<CR>
 nmap zj :action Forward<CR>
 imap zj <Esc>:action Forward<CR>
 nmap zn :action GotoNextError<CR>
+nmap zN :action GotoPreviousError<CR>
 nmap zf :action GotoDeclaration<CR>
 imap zf <Esc>:action GotoDeclaration<CR>
 nmap zgc zz:action CheckinProject<CR>
+nmap zm ]mj
+imap zm <Esc>]mj
+nmap zM 2[mj
+imap zM <Esc>2[mj
 
 map zra zz:action ReformatCode<CR>:action Rerun<CR>
 imap zra <Esc>zz:action ReformatCode<CR>:action Rerun<CR>
 
-nmap zt zz:action Run<CR>
+"nmap zt zz:action Run<CR>
 map <C-S> zz:action ReformatCode<CR>:action RearrangeCode<CR>:action Rerun<CR>
 imap <C-S> <Esc>zz:action ReformatCode<CR>:action RearrangeCode<CR>:action Rerun<CR>
+imap <C-X> <Esc>zz:action ReformatCode<CR>:action RearrangeCode<CR>
 
 map zrr :action RenameElement<CR>
 
@@ -90,6 +107,9 @@ map zrt :action SearchEverywhere<CR>
 imap zrt <Esc>:action SearchEverywhere<CR>
 map zro :action Move<CR>
 imap zro <Esc>:action Move<CR>
+nmap zr) z)zrm
+nmap zr( z(zrm
+
 map <C-D> :action EditorDuplicateLines<CR>
 imap <C-D> <Esc>:action EditorDuplicateLines<CR>
 map <C-A-K> :action MoveLineUp<CR>:action VimAutoIndentLines<CR>
@@ -105,3 +125,11 @@ imap <A-D> <Esc>:action EditorDeleteLine<CR>
 :nmap zaa ca'
 nmap <A-u> :redo<CR>
 :vmap S :action SurroundWith<CR>
+
+nmap z/ :action AceAction<CR>
+nmap z; :action AceLineAction<CR>
+nmap zv :action AceTargetAction<CR>
+nmap zw :action AceWordAction<CR>
+
+"set surround
+set multiple-cursors
