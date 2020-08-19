@@ -130,7 +130,7 @@ nmap zs :action ExpressionTypeInfo<CR>
 
 nmap z/ :action AceAction<CR>
 nmap z; :action AceLineAction<CR>
-nmap zv :action AceTargetAction<CR>
+nmap zx :action AceTargetAction<CR>
 nmap zw :action AceWordAction<CR>
 
 "set surround
