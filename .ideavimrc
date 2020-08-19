@@ -31,12 +31,12 @@ imap z,P <Esc>"0Pa
 :imap zl <End>
 ":nmap zt zt2k2j
 :nmap hc ^C
-imap zb <Esc>:action GotoDeclaration<CR>
-nmap zb :action GotoDeclaration<CR>
+imap zb <Esc>:action GotoDeclaration<CR>  
+nmap zb :action GotoDeclaration<CR>  
 vmap zb <Esc>:action GotoDeclaration<CR>
 ":nmap zb ciw
 ":vmap zb <Esc>ciw
-:imap zd <Esc>dd
+":imap zd <Esc>dd
 "nmap j gj
 "nmap k gk
 "nmap zq ZQ
@@ -57,10 +57,10 @@ nmap z{ mb?}<CR>%hhy'b'bpzz<Esc>
 imap <A-.> ->
 imap <A-,> =>
 
-nmap zS #
-imap zS <Esc>#
-nmap zs *
-imap zs <Esc>*
+nmap zD #
+imap zD <Esc>#
+nmap zd *
+imap zd <Esc>*
 nmap zJ :action Back<CR>
 imap zJ <Esc>:action Back<CR>
 nmap zj :action Forward<CR>
@@ -125,6 +125,8 @@ imap <A-D> <Esc>:action EditorDeleteLine<CR>
 :nmap zaa ca'
 nmap <A-u> :redo<CR>
 :vmap S :action SurroundWith<CR>
+imap zs :action <Esc>ExpressionTypeInfo<CR>
+nmap zs :action ExpressionTypeInfo<CR>
 
 nmap z/ :action AceAction<CR>
 nmap z; :action AceLineAction<CR>
