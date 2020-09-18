@@ -31,8 +31,8 @@ imap z,P <Esc>"0Pa
 :imap zl <End>
 ":nmap zt zt2k2j
 :nmap hc ^C
-imap zb <Esc>:action GotoDeclaration<CR>  
-nmap zb :action GotoDeclaration<CR>  
+imap zb <Esc>:action GotoDeclaration<CR>
+nmap zb :action GotoDeclaration<CR>
 vmap zb <Esc>:action GotoDeclaration<CR>
 ":nmap zb ciw
 ":vmap zb <Esc>ciw
@@ -70,10 +70,14 @@ nmap zN :action GotoPreviousError<CR>
 nmap zf :action GotoDeclaration<CR>
 imap zf <Esc>:action GotoDeclaration<CR>
 nmap zgc zz:action CheckinProject<CR>
-nmap zm ]mj
-imap zm <Esc>]mj
-nmap zM 2[mj
-imap zM <Esc>2[mj
+nmap zm :action MethodDown<CR>
+nmap zM :action MethodUp<CR>
+imap zm <Esc>:action MethodDown<CR>
+imap zM <Esc>:action MethodUp<CR>
+"nmap zm ]mj
+"imap zm <Esc>]mj
+"nmap zM 2[mj
+"imap zM <Esc>2[mj
 
 map zra zz:action ReformatCode<CR>:action Rerun<CR>
 imap zra <Esc>zz:action ReformatCode<CR>:action Rerun<CR>
